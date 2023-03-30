@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 針筒中間黑色的部分 */
+        .syringe {
+            width: 60px;
+            height: 200px;
+            background: black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* 左邊的空氣部分 */
+        .syringe::before {
+            content: "";
+            border: 0.5px solid #b2b2b2;
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            left: -401px;
+            background: linear-gradient(white 25%, #cacaca 60%, white 100%);
+
+        }
+
+        /* 右邊的藥水部分 */
+        .syringe::after {
+            content: "";
+            border: 0.5px solid #b2b2b2;
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            left: 60px;
+            background: linear-gradient(#fafaa7 25%, #cacaca 60%, #fafaa7 100%);
+
+        }
+
+        /* 底部本體 */
+        .under {
+            width: 1060px;
+            height: 140px;
+            border-radius: 20px;
+            border: 1px solid #b2b2b2;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(white 30%, #cacaca 65%, white 100%);
+        }
+
+        /* 最左邊的壓頭 */
+        .under::before {
+            content: "";
+            border: 0.5px solid #b2b2b2;
+            width: 80px;
+            height: 200px;
+            position: absolute;
+            bottom: -30px;
+            left: -70px;
+            border-radius: 15%;
+            background: linear-gradient(white 25%, #cacaca 60%, white 100%);
+
+        }
+
+        /* 針頭 */
+        .under::after {
+            content: "";
+            border: 2px solid gray;
+            width: 200px;
+            background: gray;
+            position: absolute;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            top: 50%;
+            left: 1060px;
+
+        }
+
+        /* 文字 */
+        .text {
+            width: 200px;
+            font-size: 25px;
+            color: gray;
+            position: absolute;
+            right: 255px;
+            top: 170px;
+        }
+
+        /* 針筒刻度左邊 */
+        .line {
+            position: absolute;
+            width: 400px;
+            height: 100px;
+            top: 1.5px;
+            left: -400px;
+            background: linear-gradient(90deg, transparent 95%, black 100%) repeat-x left top/25px 25px;
+        }
+
+        /* 針筒刻度右邊 */
+        .line::before {
+            content: "";
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top: 1px;
+            left: 462px;
+            background: linear-gradient(90deg, transparent 95%, black 100%) repeat-x left top/25px 25px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="under">
+        <div class="syringe">
+            <div class="text">Made in Taiwan</div>
+            <div class="line"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
